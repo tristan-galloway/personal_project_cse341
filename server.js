@@ -1,12 +1,13 @@
+// Imports
 const express = require('express');
 const app = express();
- 
-app.get('/', (req, res) => {
-  res.send("Tristan Galloway's Web Server is running!");
-});
 
+// Port configuration
 const port = 3000;
 
+app.use('/', require('./routes'));
+
+// Start the server
 app.listen(port, () => {
   console.log('Web Server is listening at port ' + (port));
 });
