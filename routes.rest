@@ -1,0 +1,19 @@
+// LOCALHOST
+###
+GET http://localhost:8080/contacts
+###
+GET http://localhost:8080/contacts/6816be94769e8f5a9c4a6a07
+###
+GET http://localhost:8080/contacts/6816bed8769e8f5a9c4a6a08
+###
+GET http://localhost:8080/contacts/6816bf25769e8f5a9c4a6a0b
+
+// PRODUCTION Deploy
+###
+GET https://cse340-spring25.onrender.com/contacts
+###
+GET https://cse340-spring25.onrender.com/contacts/6816be94769e8f5a9c4a6a07
+###
+GET https://cse340-spring25.onrender.com/contacts/6816bed8769e8f5a9c4a6a08
+###
+GET https://cse340-spring25.onrender.com/contacts/6816bf25769e8f5a9c4a6a0b
