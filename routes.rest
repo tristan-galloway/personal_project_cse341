@@ -1,19 +1,79 @@
 // LOCALHOST
 ###
 GET http://localhost:8080/contacts
+
 ###
 GET http://localhost:8080/contacts/6816be94769e8f5a9c4a6a07
+
 ###
 GET http://localhost:8080/contacts/6816bed8769e8f5a9c4a6a08
+
 ###
 GET http://localhost:8080/contacts/6816bf25769e8f5a9c4a6a0b
+
+### Create a new contact (POST)
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "email": "jane.doe@example.com",
+  "favoriteColor": "Green",
+  "birthdate": "10/25/18"
+}
+
+### Update an existing contact (PUT)
+PUT http://localhost:8080/contacts/6816bed8769e8f5a9c4a6a08
+Content-Type: application/json
+
+{
+  "firstName": "Jane",
+  "lastName": "Smith",
+  "email": "jane.smith@example.com",
+  "favoriteColor": "Red",
+  "birthdate": "03/05/13"
+}
+
+### Delete an existing contact (DELETE)
+DELETE http://localhost:8080/contacts/681e88dd1de7ce750e801d43
 
 // PRODUCTION Deploy
 ###
 GET https://cse340-spring25.onrender.com/contacts
+
 ###
 GET https://cse340-spring25.onrender.com/contacts/6816be94769e8f5a9c4a6a07
+
 ###
 GET https://cse340-spring25.onrender.com/contacts/6816bed8769e8f5a9c4a6a08
+
 ###
 GET https://cse340-spring25.onrender.com/contacts/6816bf25769e8f5a9c4a6a0b
+
+### Create a new contact (POST)
+POST https://cse340-spring25.onrender.com/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "email": "jane.doe@example.com",
+  "favoriteColor": "Green",
+  "birthdate": "1992-05-15"
+}
+
+### Update an existing contact (PUT)
+PUT https://cse340-spring25.onrender.com/contacts/6816be94769e8f5a9c4a6a07
+Content-Type: application/json
+
+{
+  "firstName": "Jane",
+  "lastName": "Smith",
+  "email": "jane.smith@example.com",
+  "favoriteColor": "Red",
+  "birthdate": "1992-05-15"
+}
+
+### Delete an existing contact (DELETE)
+DELETE https://cse340-spring25.onrender.com/contacts/6816bed8769e8f5a9c4a6a08
