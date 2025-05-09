@@ -30,13 +30,13 @@ Content-Type: application/json
 {
   "firstName": "Jane",
   "lastName": "Smith",
-  "email": "janesmith@example.com",
-  "favoriteColor": "Blue",
+  "email": "jane.smith@example.com",
+  "favoriteColor": "Red",
   "birthdate": "03/05/13"
 }
 
 ### Delete an existing contact (DELETE)
-DELETE http://localhost:8080/contacts/681e8f87681f88933237c46c
+DELETE http://localhost:8080/contacts/681e90cf8de95f00674fffef
 
 // PRODUCTION Deploy
 ###
