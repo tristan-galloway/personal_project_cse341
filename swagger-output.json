@@ -5,7 +5,7 @@
     "description": "API for managing contacts with CRUD operations.",
     "version": "1.0.0"
   },
-  "host": "https://cse340-spring25.onrender.com",
+  "host": "cse340-spring25.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
