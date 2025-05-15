@@ -8,7 +8,7 @@
   "host": "https://cse340-spring25.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/contacts/": {
