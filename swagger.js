@@ -3,7 +3,7 @@ const env = require('dotenv').config();
 
 const host =
   process.env.NODE_ENV === 'production'
-    ? 'cse340-spring25.onrender.com'
+    ? 'https://cse340-spring25.onrender.com'
     : 'localhost:8080';
 
 const doc = {
