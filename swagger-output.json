@@ -10,24 +10,49 @@
   "schemes": [
     "http"
   ],
-  "consumes": [
-    "application/json"
-  ],
-  "produces": [
-    "application/json"
-  ],
   "paths": {
-    "/contacts": {
+    "/contacts/": {
       "get": {
-        "summary": "Get all contacts",
-        "description": "Returns a list of all contacts.",
+        "description": "Get all contacts",
+        "produces": [
+          "application/json"
+        ],
         "responses": {
           "200": {
-            "description": "A list of contacts.",
+            "description": "List of contacts",
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Contact"
+                "type": "object",
+                "properties": {
+                  "_id": {
+                    "type": "string",
+                    "example": "6816bf25769e8f5a9c4a6a0b"
+                  },
+                  "firstName": {
+                    "type": "string",
+                    "example": "Alice"
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "example": "Johnson"
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "alicejohnson@test.com"
+                  },
+                  "favoriteColor": {
+                    "type": "string",
+                    "example": "red"
+                  },
+                  "birthdate": {
+                    "type": "string",
+                    "example": "02/02/22"
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
               }
             }
           },
@@ -37,16 +62,37 @@
         }
       },
       "post": {
-        "summary": "Create a new contact",
-        "description": "Creates a new contact.",
+        "description": "Create a new contact",
         "parameters": [
           {
             "name": "body",
             "in": "body",
-            "description": "Contact object to create",
+            "description": "Contact data",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ContactInput"
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "Alice"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Johnson"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "alicejohnson@test.com"
+                },
+                "favoriteColor": {
+                  "type": "string",
+                  "example": "red"
+                },
+                "birthdate": {
+                  "type": "string",
+                  "example": "02/02/22"
+                }
+              }
             }
           }
         ],
@@ -54,11 +100,36 @@
           "201": {
             "description": "Contact created",
             "schema": {
-              "$ref": "#/definitions/Contact"
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "Alice"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Johnson"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "alicejohnson@test.com"
+                },
+                "favoriteColor": {
+                  "type": "string",
+                  "example": "red"
+                },
+                "birthdate": {
+                  "type": "string",
+                  "example": "02/02/22"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
             }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Missing a required field."
           },
           "500": {
             "description": "Internal Server Error"
@@ -68,55 +139,102 @@
     },
     "/contacts/{id}": {
       "get": {
-        "summary": "Get a contact by ID",
-        "description": "Returns a single contact.",
+        "description": "Get a single contact by ID",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "ID of the contact to retrieve",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "Contact ID",
+            "example": "609e12672f8fb814b56fa181"
           }
         ],
         "responses": {
           "200": {
             "description": "Contact found",
             "schema": {
-              "$ref": "#/definitions/Contact"
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "Jane"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Smith"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "janesmith@test.com"
+                },
+                "favoriteColor": {
+                  "type": "string",
+                  "example": "green"
+                },
+                "birthdate": {
+                  "type": "string",
+                  "example": "01/01/21"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
             }
           },
           "404": {
             "description": "Contact not found"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       },
       "put": {
-        "summary": "Update a contact",
-        "description": "Updates an existing contact.",
+        "description": "Update a contact by ID",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "ID of the contact to update",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "Contact ID",
+            "example": "609e12672f8fb814b56fa181"
           },
           {
             "name": "body",
             "in": "body",
-            "description": "Updated contact object",
+            "description": "Updated contact data",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ContactInput"
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "John"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Doe"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "johndoe@test.com"
+                },
+                "favoriteColor": {
+                  "type": "string",
+                  "example": "blue"
+                },
+                "birthdate": {
+                  "type": "string",
+                  "example": "12/12/20"
+                }
+              }
             }
           }
         ],
         "responses": {
-          "200": {
+          "204": {
             "description": "Contact updated"
           },
           "404": {
@@ -128,15 +246,15 @@
         }
       },
       "delete": {
-        "summary": "Delete a contact",
-        "description": "Deletes a contact by ID.",
+        "description": "Delete a contact by ID",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "ID of the contact to delete",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "Contact ID",
+            "example": "609e12672f8fb814b56fa181"
           }
         ],
         "responses": {
@@ -151,69 +269,16 @@
           }
         }
       }
-    }
-  },
-  "definitions": {
-    "Contact": {
-      "type": "object",
-      "properties": {
-        "_id": {
-          "type": "string",
-          "example": "60c72b2f9b1e8b001c8d4567"
-        },
-        "firstName": {
-          "type": "string",
-          "example": "Jane"
-        },
-        "lastName": {
-          "type": "string",
-          "example": "Doe"
-        },
-        "email": {
-          "type": "string",
-          "example": "jane.doe@example.com"
-        },
-        "favoriteColor": {
-          "type": "string",
-          "example": "Green"
-        },
-        "birthdate": {
-          "type": "string",
-          "example": "1992-05-15"
+    },
+    "/api-docs/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
         }
       }
-    },
-    "ContactInput": {
-      "type": "object",
-      "properties": {
-        "firstName": {
-          "type": "string",
-          "example": "Jane"
-        },
-        "lastName": {
-          "type": "string",
-          "example": "Doe"
-        },
-        "email": {
-          "type": "string",
-          "example": "jane.doe@example.com"
-        },
-        "favoriteColor": {
-          "type": "string",
-          "example": "Green"
-        },
-        "birthdate": {
-          "type": "string",
-          "example": "1992-05-15"
-        }
-      },
-      "required": [
-        "firstName",
-        "lastName",
-        "email",
-        "favoriteColor",
-        "birthdate"
-      ]
     }
   }
 }
