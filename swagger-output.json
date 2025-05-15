@@ -5,6 +5,7 @@
     "description": "API for managing contacts with CRUD operations.",
     "version": "1.0.0"
   },
+  "host": "cse340-spring25.onrender.com",
   "basePath": "/",
   "schemes": [
     "http"
@@ -26,27 +27,27 @@
                 "properties": {
                   "_id": {
                     "type": "string",
-                    "example": "6816bf25769e8f5a9c4a6a0b"
+                    "example": "6816be94769e8f5a9c4a6a07"
                   },
                   "firstName": {
                     "type": "string",
-                    "example": "Alice"
+                    "example": "John"
                   },
                   "lastName": {
                     "type": "string",
-                    "example": "Johnson"
+                    "example": "Doe"
                   },
                   "email": {
                     "type": "string",
-                    "example": "alicejohnson@test.com"
+                    "example": "johndoe@test.com"
                   },
                   "favoriteColor": {
                     "type": "string",
-                    "example": "red"
+                    "example": "blue"
                   },
                   "birthdate": {
                     "type": "string",
-                    "example": "02/02/22"
+                    "example": "12/12/20"
                   }
                 }
               },

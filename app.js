@@ -21,7 +21,3 @@ mongodb.initDb((err, mongodb) => {
     console.log(`Connected to DB and listening on ${port}`);
   }
 });
-
-if (process.env.NODE_ENV !== 'production') {
-  require('./swagger.js');
-}
