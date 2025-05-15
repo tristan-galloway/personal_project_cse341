@@ -5,7 +5,6 @@
     "description": "API for managing contacts with CRUD operations.",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
   "basePath": "/",
   "schemes": [
     "http"
