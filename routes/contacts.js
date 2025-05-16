@@ -65,11 +65,8 @@ router.post(
      #swagger.responses[201] = { 
        description: 'Contact created',
        schema: {
-         firstName: 'Alice',
-         lastName: 'Johnson',
-         email: 'alicejohnson@test.com',
-         favoriteColor: 'red',
-         birthdate: '02/02/22'
+          "acknowledged": true,
+          "insertedId": "6826cf1a65bd95eeb8d5908c"
        }
      }
      #swagger.responses[400] = { description: 'Missing a required field.' }

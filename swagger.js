@@ -1,17 +1,17 @@
 const swaggerAutogen = require('swagger-autogen')();
 const env = require('dotenv').config();
 
-const host =
-  process.env.NODE_ENV === 'production'
-    ? 'cse340-spring25.onrender.com'
-    : 'localhost:8080';
+// const host =
+//   process.env.NODE_ENV === 'production'
+//     ? 'cse340-spring25.onrender.com'
+//     : 'localhost:8080';
 
 const doc = {
   info: {
     title: 'Contacts API',
     description: 'API for managing contacts with CRUD operations.'
   },
-  host: host
+  host: "cse340-spring25.onrender.com"
 };
 
 const outputFile = './swagger-output.json';
